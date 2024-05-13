@@ -1,11 +1,11 @@
 import randompy
 
-def is_value(choto):
-    mass = list(range(1, 101))
-    choto = str(choto)
-    if choto.isdigit():
-        choto = int(choto)
-        if choto in mass:
+def is_value(vvod):
+    mass = list(range(1, 101))    #массив с диапазоном от 1 до 100
+    vvod = str(vvod)    #перевод в строку, чтобы проверить на число
+    if vvod.isdigit():    #если число, дальше
+        vvod = int(vvod)    #перевод в число, для проверки
+        if vvod in mass:    #если число есть в массиве
             return True
         else:
             print('Не входит число в диапазон')
@@ -14,17 +14,17 @@ def is_value(choto):
         print('Не число')
         return False
 
-chislo = randompy.integer(1, 100)
-inputs = 0
+chislo = randompy.integer(1, 100)    #рандом
+inputs = 0    #в будущем инпут от пользователя
 
-while inputs != chislo:
+while inputs != chislo:    #выполняем, пока вводимое число не равно рандомному
     inputs = input('Число от 1 до 100: ')
-    znach_value = is_value(inputs)
+    znach_value = is_value(inputs)    #проверка входного числа
     if znach_value == True:
-        inputs = int(inputs)
-        if inputs > chislo:
+        inputs = int(inputs)    #переводим строку в число
+        if inputs > chislo:    #если вводимое больше рандомного
             print('Надо меньше')
-        elif inputs < chislo:
+        elif inputs < chislo:    #ессли вводимое меньше рандомного
             print('Надо больше')
         else:
             print('Угадал')
